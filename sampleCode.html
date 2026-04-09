@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Project Code Sample
+        </title>
+        <style>
+            body {
+                margin: 0px;
+            }
+            p, h2 {
+                margin-top: 2px;
+                margin-bottom: 2px;
+            }
+            h2 {
+                font-size: 28px;
+                font-weight: bold;
+            }
+            span {
+                color: lightgreen;
+            }
+            h2, h4  {
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+            }
+            h3, p {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            h4 {
+                font-weight: bold;
+                font-size: 20px;
+            }
+            #linkDiv div {
+                width: 25%; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center;
+            }
+            #linkDiv div p {
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: "11px";
+            }
+
+        </style>
+        <script src="codeSamples.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const params = Object.fromEntries(new URLSearchParams(window.location.search));
+                const appName = params["appName"];
+
+                const appInfo = codeSamples[appName]["CodeHeader"].split("\r\n");
+                const sampleHeader = "\"" + appInfo[0] + "\"";
+                const sampleDescription = appInfo[1];
+
+                const sampleCode = codeSamples[appName]["CodeBody"];
+                const mainDiv = document.getElementById("sampleSections");
+
+                document.getElementById("appTitle").innerHTML = sampleHeader;
+                document.getElementById("codeDescription").innerHTML = sampleDescription;
+
+                for (const codePage in sampleCode) {
+                    const sampleDiv = document.createElement("div");
+                    const codeHeaderDiv = document.createElement("div");
+                    codeHeaderDiv.style.display = "flex";
+                    codeHeaderDiv.style.marginTop = "0px";
+                    codeHeaderDiv.style.marginBottom = "0px";
+                    codeHeaderDiv.style.justifyContent = "center";
+                    const codeHeader = document.createElement("h4");
+                    codeHeader.style.width = "90%";
+                    codeHeader.innerHTML = sampleCode[codePage]["InnerHeader"];
+                    codeHeaderDiv.appendChild(codeHeader);
+                    sampleDiv.appendChild(codeHeaderDiv);
+                    sampleDiv.style.border = "2px solid black";
+                    sampleDiv.style.paddingBottom = "20px";
+                    sampleDiv.style.backgroundColor = "white";
+                    sampleDiv.style.marginTop = "20px";
+                    sampleDiv.style.marginBottom = "20px";
+                    sampleDiv.style.width = "98%";
+                    const codeDiv = document.createElement("div");
+                    sampleDiv.appendChild(codeDiv);
+                    const codeBodyArea = document.createElement("div");
+                    codeBodyArea.style.border = "1px solid black";
+                    const codeBodyLines = sampleCode[codePage]["InnerBody"].split("\n");
+                    for (const line in codeBodyLines) {
+                        if (codeBodyLines[line].includes("//")) {
+                            codeBodyLines[line] = codeBodyLines[line].replace("//","<span>//").replace(":<span>//","://");
+                            codeBodyLines[line] += "</span>";
+                        } else if (codeBodyLines[line].includes("&lt!--")) {
+                            codeBodyLines[line] = codeBodyLines[line].replace("&lt!--","<span>&lt!--");
+                            codeBodyLines[line] += "</span>";
+                        } else if (codeBodyLines[line].includes("#") && appName == "signWizard") {
+                            codeBodyLines[line] = codeBodyLines[line].replace("# #","#");
+                            codeBodyLines[line] = codeBodyLines[line].replace("#","<span>#");
+                            codeBodyLines[line] += "</span>";
+                        }
+                        const codeBodySingleLine = document.createElement("p");
+                        codeBodySingleLine.style.whiteSpace = "pre";
+                        codeBodySingleLine.style.fontFamily = "'Consolas', 'Courier New', monospace";
+                        codeBodySingleLine.innerHTML = codeBodyLines[line];
+                        codeBodyArea.appendChild(codeBodySingleLine);
+                    }
+                    codeBodyArea.className = "codeArea";
+                    codeBodyArea.style.width = "95%";
+                    codeBodyArea.style.height = "250px";
+                    codeBodyArea.style.overflowY = "scroll"; 
+                    codeBodyArea.style.backgroundColor = "black";
+                    codeBodyArea.style.color = "lightgray";
+                    codeDiv.style.display = "flex";
+                    codeDiv.style.justifyContent = "center";
+                    codeDiv.appendChild(codeBodyArea);
+                    mainDiv.appendChild(sampleDiv);
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <!-- <div style="background-color: white; height: 75px; display: flex; align-content: center;">
+            <div style="justify-content: center; width: 70%; align-items:center;display:flex;">
+                <div style="display: inline-flex; width: 90%">
+                    <div style="width:30px; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 20px; height: 20px; background-color: blue;"></div>
+                    </div>
+                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 30px">Ian McInnes</h1>
+                    <p style="margin-left: 20px; align-content: center; margin-top: 8px; font-size: 18px;"> / SOFTWARE DEVELOPER</p>
+                </div>
+            </div>
+            <div id="linkDiv" style="display: flex; width: 30%; align-items:center; justify-content:center;">
+                <div>
+                    <p>ABOUT ME</p>
+                </div>
+                <div>
+                    <p>PROJECTS</p>
+                </div>
+                <div>
+                    <p>RESUME</p>
+                </div>
+            </div>
+        </div> -->
+        <div style="display: flex; flex-direction: column; align-items: center; background-color: lightgray;">
+            <div style="display: inline-flex; margin-bottom: 5px; margin-top: 10px;">
+                <div style="width:30px; display: flex; align-items: center; justify-content: center;">
+                    <div style="width: 20px; height: 20px; background-color: blue;"></div>
+                </div>
+                <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 36px">Code Sample</h1>
+            </div>
+            <div>
+                <h2 id="appTitle"></h2>
+            </div>
+            <br>
+            <div>
+                <p id="codeDescription" style="font-size: 18px;"></p>
+            </div>
+        </div>
+        <div id="sampleSections" style="display:flex; flex-direction: column; align-items:center; background-color: lightgray"></div>
+        <!-- <div style="background-color: white; height: 100px; display: flex; align-content: center;">
+            <div style="justify-content: center; width: 60%; align-items:center;display:flex;">
+                <div style="display: inline-flex; width: 90%">
+                    <div style="width:30px; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 20px; height: 20px; background-color: blue;"></div>
+                    </div>
+                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 30px">Ian McInnes</h1>
+                    <p style="margin-left: 20px; align-content: center; margin-top: 8px; font-size: 18px;"> / SOFTWARE DEVELOPER</p>
+                </div>
+            </div>
+            <div style="width: 40%;display:flex;">
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                    <img src="email.png" height="32px" width="32px"/>
+                    <a href="mailto:imcinnes31@gmail.com">imcinnes31@gmail.com</a>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                    <img src="phone.png" height="32px" width="32px"/>
+                    <a href="tel:+2042931517">(204) 293-1517</a>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                    <img src="github.png" height="32px" width="32px"/>
+                    <a href="https://github.com/imcinnes31">github.com/imcinnes31</a>
+                </div>
+            </div>
+        </div> -->
+    </body>
+</html>

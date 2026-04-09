@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Ian's Projects
+        </title>
+        <style>
+            body {
+                margin: 0px;
+            }
+            p, h2 {
+                margin-top: 2px;
+                margin-bottom: 2px;
+            }
+            h2 {
+                font-size: 30px;
+                font-weight: bold;
+            }
+            span {
+                color: lightgreen;
+            }
+            h2, h4  {
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+            }
+            h3, p, a, button {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            h4 {
+                font-weight: bold;
+                font-size: 20px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            #linkDiv div {
+                width: 25%; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center;
+            }
+            #linkDiv div p {
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: "11px";
+            }
+            p, a, button {
+                font-size: 18px;
+                white-space: pre-wrap;
+            }
+            button {
+                width: 90%;
+                height: 40px;
+                margin-left: 10px;
+                margin-right: 10px;
+                color: white;
+                border: none;
+            }
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+            }
+            #linkDiv div a {
+                color: black;
+            }
+
+        </style>
+        <script src="codeSamples.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const projectSection = document.getElementById("projectSections");
+
+                for (const project in codeSamples) {
+                    const divContainer = document.createElement("div");
+                    divContainer.style.width = "100%";
+                    divContainer.style.display = "flex";
+                    divContainer.style.justifyContent = "center";
+                    divContainer.style.flexDirection = "column";
+                    const projectHeader = document.createElement("h2");
+                    projectHeader.style.textAlign = "center";
+                    projectHeader.style.marginTop = "25px";
+                    projectHeader.style.marginBottom = "15px";
+                    projectHeader.style.textDecoration = "underline";
+                    projectHeader.innerHTML = codeSamples[project]["Title"];
+                    const projectBody = document.createElement("div");
+                    projectBody.style.display = "flex";
+                    projectBody.style.justifyContent = "center";
+                    const projectDiv = document.createElement("div");
+                    projectDiv.style.width = "75%";
+                    projectDiv.style.display = "flex";
+                    projectDiv.style.backgroundColor = "white";
+                    projectDiv.style.border = "1px solid black";
+                    projectDiv.style.flexDirection = "column";
+                    const projectDivUpper = document.createElement("div");
+                    projectDivUpper.style.display = "flex";
+                    projectDivUpper.style.width = "100%";
+                    projectDivUpper.style.paddingTop = "20px";
+                    projectDivUpper.style.paddingBottom = "20px";
+
+                    const projectDivLower = document.createElement("div");
+                    projectDivLower.style.height = "75px";
+                    projectDivLower.style.display = "flex";
+                    projectDivLower.style.justifyContent = "center";
+                    const sampleLink = document.createElement("a");
+                    sampleLink.style.width = "30%";
+                    sampleLink.href = "sampleCode.html?appName=" + project;
+                    sampleLink.target="_blank";
+                    sampleLink.rel="noopener noreferrer";
+                    const sampleButton = document.createElement("button");
+                    sampleButton.style.backgroundColor = "blue";
+                    sampleButton.innerHTML = "Code Sample";
+                    sampleLink.appendChild(sampleButton);
+                    const downloadLink = document.createElement("a");
+                    downloadLink.style.width = "30%";
+                    downloadLink.href = codeSamples[project]["Link"] != null ? codeSamples[project]["Link"] : "javascript:void(0)";
+                    const downloadButton = document.createElement("button");
+                    downloadButton.style.backgroundColor = codeSamples[project]["Link"] != null ? "darkslategray" : "lightgray";
+                    downloadButton.innerHTML = codeSamples[project]["Type"] == "Web" ? "Go To Website" : codeSamples[project]["Link"] != null ? "Download Link" : "Coming Soon";
+                    downloadLink.appendChild(downloadButton);
+                    projectDivLower.appendChild(sampleLink);
+                    projectDivLower.appendChild(downloadLink);
+
+                    const leftPane = document.createElement("div");
+                    leftPane.style.width = "50%";
+                    leftPane.style.paddingLeft = "20px";
+                    leftPane.style.paddingRight = "20px";
+                    const appType = document.createElement("h4");
+                    appType.innerHTML = codeSamples[project]["Type"] + " Application";
+                    leftPane.appendChild(appType);
+                    const projectDescription = document.createElement("p");
+                    projectDescription.innerHTML = codeSamples[project]["Description"].replaceAll(". ",".  ");
+                    leftPane.appendChild(projectDescription);
+                    const techDescription = document.createElement("h4");
+                    techDescription.innerHTML = "Technologies Used:  " + codeSamples[project]["Technologies"].join(", ");
+                    leftPane.appendChild(techDescription);
+                    if (codeSamples[project]["YouTube"] != null) {
+                        const youTubeDiv = document.createElement("div");
+                        youTubeDiv.style.display = "flex";
+                        const youTubeHeader = document.createElement("h4");
+                        youTubeHeader.style.margin = "0px";
+                        youTubeHeader.innerHTML = "YouTube Demo: ";
+                        youTubeDiv.appendChild(youTubeHeader);
+                        const youTubeLink = document.createElement("a");
+                        youTubeLink.style.marginLeft = "5px";
+                        youTubeLink.href = codeSamples[project]["YouTube"];
+                        youTubeLink.innerHTML = codeSamples[project]["YouTube"];
+                        youTubeDiv.appendChild(youTubeLink);
+                        leftPane.appendChild(youTubeDiv);
+                    }
+                    if (codeSamples[project]["Instructions"] != null) {
+                        const instructionsHeader = document.createElement("h4");
+                        instructionsHeader.innerHTML = "Instructions:";
+                        leftPane.appendChild(instructionsHeader);
+                        const instructions = document.createElement("p");
+                        instructions.innerHTML = codeSamples[project]["Instructions"].replaceAll(". ",".  ");
+                        leftPane.appendChild(instructions);
+                    }
+
+                    const rightPane = document.createElement("div");
+                    rightPane.style.width = "50%";
+                    rightPane.style.display = "flex";
+                    rightPane.style.justifyContent = "center";
+                    const projectPic = document.createElement("img");
+                    projectPic.src = codeSamples[project]["Picture"];
+                    projectPic.style.width = "90%";
+                    rightPane.appendChild(projectPic);
+
+                    projectDivUpper.appendChild(leftPane);
+                    projectDivUpper.appendChild(rightPane);
+                    projectDiv.appendChild(projectDivUpper);
+                    projectDiv.appendChild(projectDivLower);
+                    projectBody.appendChild(projectDiv);
+                    divContainer.appendChild(projectHeader);
+                    divContainer.appendChild(projectBody);
+                    projectSection.appendChild(divContainer);
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div style="background-color: white; height: 75px; display: flex; align-content: center;">
+            <div style="justify-content: center; width: 70%; align-items:center;display:flex;">
+                <div style="display: inline-flex; width: 90%">
+                    <div style="width:30px; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 20px; height: 20px; background-color: blue;"></div>
+                    </div>
+                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 30px">Ian McInnes</h1>
+                    <p style="margin-left: 20px; align-content: center; margin-top: 8px; font-size: 18px;"> / SOFTWARE DEVELOPER</p>
+                </div>
+            </div>
+            <div id="linkDiv" style="display: flex; width: 30%; align-items:center; justify-content:center;">
+                <div>
+                    <a href="intro.html"><p>ABOUT ME</p></a>
+                </div>
+                <div>
+                    <a href="javascript:void(0)"><p style="color:blue;">PROJECTS</p></a>
+                </div>
+                <div>
+                    <a href="resume.html"><p>RESUME</p></a>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; background-color: lightblue;">
+            <div style="display: inline-flex; margin-bottom: 5px; margin-top: 10px;">
+                <div style="width:30px; display: flex; align-items: center; justify-content: center;">
+                    <div style="width: 20px; height: 20px; background-color: blue;"></div>
+                </div>
+                <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 36px">Projects</h1>
+            </div>
+            <div>
+                <p style="font-size: 24px;">This is a sample of my assignments and projects, including ones currently in progress.</p>
+            </div>
+        </div>
+
+        <div id="projectSections" style="display:flex; flex-direction: column; justify-content:center; background-color: lightblue; padding: 20px;">
+
+        </div>
+
+        <div style="background-color: white; height: 100px; display: flex; align-content: center;">
+            <div style="justify-content: center; width: 60%; align-items:center;display:flex;">
+                <div style="display: inline-flex; width: 90%">
+                    <div style="width:30px; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 20px; height: 20px; background-color: blue;"></div>
+                    </div>
+                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 30px">Ian McInnes</h1>
+                    <p style="margin-left: 20px; align-content: center; margin-top: 8px; font-size: 18px;"> / SOFTWARE DEVELOPER</p>
+                </div>
+            </div>
+            <div style="width: 40%;display:flex;">
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                    <img src="email.png" height="32px" width="32px"/>
+                    <a href="mailto:imcinnes31@gmail.com">imcinnes31@gmail.com</a>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                    <img src="phone.png" height="32px" width="32px"/>
+                    <a href="tel:+2042931517">(204) 293-1517</a>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                    <img src="github.png" height="32px" width="32px"/>
+                    <a href="https://github.com/imcinnes31">github.com/imcinnes31</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

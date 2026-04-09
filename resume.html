@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Resume - Ian McInnes
+        </title>
+        <style>
+            h2, h3 {
+                color: #061738;
+                font-weight: bold;
+                margin: 0px 0px;
+            }
+            h3 {
+                font-size: 12px;
+            }
+            h3 span {
+                font-size: 18px;
+            }
+            h2 {
+                font-size: 12px;
+            }
+            h2 span {
+                font-size: 18px;
+            }
+            ul {
+                padding-left: 15px;
+            }
+            #jobExperienceSection p, #educationSection p {
+                margin: 2px;
+            }
+
+            #educationCell p, .jobListing p {
+                margin: 2px;
+            }
+
+            .jobSkillsList, #volunteerHistory ul {
+                list-style: none;
+            }
+
+            .jobSkillsList li:before, #volunteerHistory ul li:before {
+                content: '✓';
+            }
+
+            table {
+                width: 100%;
+            }
+            td {
+                width: 33.3%;
+            }
+            #educationHistory p {
+                height: 8px;
+            }
+            #otherQualifications p {
+                height: 8px;
+            }
+            #linkDiv div {
+                width: 25%; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center;
+            }
+            #linkDiv div p {
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: "11px";
+            }
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+            }
+            #linkDiv div a {
+                color: black;
+            }
+            a p {
+                font-size: 18px;
+            }
+
+
+        </style>
+        <script src="codeSamples.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            });
+        </script>
+    </head>
+    <body style="font-family: Arial, Helvetica, sans-serif;margin:0px;">
+        <div style="background-color: white; height: 75px; display: flex; align-content: center;">
+            <div style="justify-content: center; width: 70%; align-items:center;display:flex;">
+                <div style="display: inline-flex; width: 90%">
+                    <div style="width:30px; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 20px; height: 20px; background-color: blue;"></div>
+                    </div>
+                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 30px">Ian McInnes</h1>
+                    <p style="margin-top: 2px; margin-bottom: 2px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-left: 20px; align-content: center; margin-top: 8px; font-size: 18px; white-space: pre-wrap;"> / SOFTWARE DEVELOPER</p>
+                </div>
+            </div>
+            <div id="linkDiv" style="display: flex; width: 30%; align-items:center; justify-content:center;">
+                <div>
+                    <a href="intro.html"><p>ABOUT ME</p></a>
+                </div>
+                <div>
+                    <a href="projects.html"><p>PROJECTS</p></a>
+                </div>
+                <div>
+                    <a href="javascript:void(0)"><p style="color:blue;">RESUME</p></a>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; background-color: pink;">
+            <div style="display: inline-flex; margin-bottom: 5px; margin-top: 10px;">
+                <div style="width:30px; display: flex; align-items: center; justify-content: center;">
+                    <div style="width: 20px; height: 20px; background-color: blue;"></div>
+                </div>
+                <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 36px">Resume</h1>
+            </div>
+            <div style="display:flex;margin-top: 10px;margin-bottom:20px;">
+                <a href="Ian McInnes - Software Developer Resume.pdf">
+                    <button style="background-color:blue; color: white; font-weight: bold; font-size: 14px; height: 30px; padding-left: 20px; padding-right: 20px; border: none; border-radius: 20px;">Download My Resume</button>
+                </a>
+            </div>
+        </div>
+
+        <div style="padding: 10px;border-bottom: 2px solid black">
+            <div style="display:flex;align-items:center;height:30px;background-color:#DBDBDB;">
+                <h3><span>O</span>BJECTIVE</h3>
+            </div>
+            <hr>
+            <p id="summaryCellText" style="font-size:16px;"></p>  
+            <table>
+                <tbody>
+                    <tr>
+                        <td>• Experience and expertise in software development using HTML, CSS, Javascript and React</td>
+                    </tr>
+                    <tr>
+                        <td>• Proficient in programming desktop and mobile applications with Java, using Eclipse or Android Studio</td>
+                    </tr>
+                    <tr>
+                        <td>• Experience and expertise in backend development using Python, Node, Django and Flask</td>
+                    </tr>
+                    <tr>
+                        <td>• Experience and expertise in data management using Javascript, MySQL, Mongo, MongoDB Compass</td>
+                    </tr>
+                    <tr>
+                        <td>• Knowledge and understanding of shipping and receiving, logistics and analytics, inventory control, cash management and financial planning</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <div style="display:flex;align-items:center;height:30px;background-color:#DBDBDB;">
+                <h3><span>J</span>OB <span>S</span>KILLS</h3>
+            </div>
+            <hr>
+            <div id="resumeJobExperience">
+                <div class="jobListing" style="width: 90%;"><div style="height: 30px; display: flex; align-items: center;"><p style="font-weight: bold; font-size: 16px;"><h2><span>S</span>OFTWARE <span>D</span>EVELOPMENT</h2></p></div><ul class="jobSkillsList"><li>	<b>Created 'Expiry Date Tracker'</b>, a web application to record expiry dates of products throughout the store, and give alerts when a product should be pulled</li><li>	<b>Created 'Sign Wizard'</b>, a web application to help change the message on outdoor advertising board by listing letters to pull off and letters to bring out</li><li>	<b>Created 'Canex Warranty'</b>, a web application to display prices of big ticket service protection plans based on length, price of item, and number of items bought</li><li>	<b>Created static web applications </b>to automatically fill out forms without having to fill them out by hand</li><li>	<b>Helped create 'Find A Counselor'</b>, a web application to help clients find a mental health counselor, using Visual Studio Code</li><li>	<b>Added filters </b>to counselor search program to narrow client's search based on price range, specializations, or (if in-person counseling needed) by location</li><li>	<b>Reformatted the entire application </b>for use on mobile devices</li><li>	<b>Built 'Hunger Games Scoreboard' </b>with Android Studio, a Java mobile app to help keep track of arena deaths in the 'Hunger Games' novels</li><li>	<b>Created a Nutrition Tracker app using Java </b>to help people keep track of calories, sodium, fats, etc. by taking pictures of nutrition labels or looking up foods using Nutrition Canada APIs</li></ul></div><div class="jobListing" style="width: 90%;"><div style="height: 30px; display: flex; align-items: center;"><p style="font-weight: bold; font-size: 16px;"><h2><span>D</span>ATA <span>M</span>ANAGEMENT</h2></p></div><ul class="jobSkillsList"><li>	<b>Proficient </b>in SQL Databases, creating tables, views, queries, procedures, and indexes</li><li>	<b>Created JavaScript dictionary </b>of extended warranty data, including product code, barcode number, and price, categorizing them into product types and warranty lengths</li><li>	<b>Created MySQL database </b>of letters for outside sign, including number in inventory and width of letters, using MySQL Workbench</li><li>	<b>Created and maintained Mongo database </b>of products in the store, with UPCs, vendors, and upcoming expiry dates</li><li>	<b>Entered information </b>about counselors into 'Find A Counselor' database, such as name, specializations, approaches, location, prices, using MongoDB Compass</li><li>	<b>Updated counselor information </b>in database when necessary (price increase, etc.)</li><li>	<b>Created MongoDB queries </b>to filter counselor search, for use in back end development</li></ul></div><div class="jobListing" style="width: 90%;"><div style="height: 30px; display: flex; align-items: center;"><p style="font-weight: bold; font-size: 16px;"><h2><span>B</span>ACK <span>E</span>ND <span>D</span>EVELOPMENT</h2></p></div><ul class="jobSkillsList"><li>	<b>Completed Java Programming at Red River College</b>, with an OCA certification in Java</li><li>	<b>Used Python </b>with Flask framework for 'Sign Wizard' application to calculate number of letters needed to bring out or pull off, while determining if there were enough letters for the new message and if it would fit on the sign</li><li>	<b>Used Node </b>with Express to create APIs in 'Expiry Date Tracker' to add and remove expiry dates, add new products, and get products ready to pull or discount</li><li>	<b>Used Node </b>with Express to create APIs in 'Find A Counselor' to perform database queries used to search for, update, and create counselor data</li></ul></div><div class="jobListing" style="width: 90%;"><div style="height: 30px; display: flex; align-items: center;"><p style="font-weight: bold; font-size: 16px;"><h2><span>F</span>RONT <span>E</span>ND <span>D</span>EVELOPMENT</h2></p></div><ul class="jobSkillsList"><li>	<b>Made 'Sign Wizard' interface </b>to enter in new message for outside sign, or update current letter inventory</li><li>	<b>Made 'Canex Warranty' interface </b>to enter in price of product to determine price of warranty, and retrieve warranty barcode</li><li>	<b>Used HTML </b>to replicate forms, using text inputs and dropdown menus to easily search for products and retrieve warranty information, or to alert user if they forgot to fill a field</li><li>	<b>Constructed React Front-End components </b>for 'Expiry Date Tracker', used to request date checks, pull alerts, and to construct various reports</li><li>	<b>Used HTML</b>, CSS, JavaScript, and React components to create client-end webpage for users to find counselors, including checkboxes, radio buttons, and drop down menus to allow the user to narrow their search</li></ul></div><div class="jobListing" style="width: 90%;"><div style="height: 30px; display: flex; align-items: center;"><p style="font-weight: bold; font-size: 16px;"><h2><span>A</span>PPLICATION <span>D</span>EPLOYMENT</h2></p></div><ul class="jobSkillsList"><li>	<b>Uploaded all web applications </b>to GitHub, while updating them using Github site or Visual Studio</li><li>	<b>Deployed 'Sign Wizard' application </b>on Heroku, reuploading when updates made</li><li>	<b>Deployed back end </b>of 'Expiry Date Tracker' on Heroku, and front end on Netlify</li><li>	<b>Stored code using GitHub</b>, checked for any merge conflicts using GitHub Desktop</li></ul></div></div>
+            <br>
+            <div style="display:flex;align-items:center;height:30px;background-color:#DBDBDB;">
+                <h3><span>W</span>ORK <span>H</span>ISTORY</h3>
+            </div>
+            <hr>
+            <div id="resumeWorkHistory">
+                <table style="width: 90%;"><tbody><tr><td style="font-weight: bold;">Sales Associate</td><td>CANEX 17 Wing</td><td>Jun 2017 - Present</td></tr><tr><td style="font-weight: bold;">Full Stack Developer</td><td>Phare Counseling</td><td>Aug 2021 - Feb 2022</td></tr><tr><td style="font-weight: bold;">Video Rental Clerk</td><td>Video Cellar</td><td>Oct 2013 - Feb 2016</td></tr><tr><td style="font-weight: bold;">Shift Leader</td><td>Rogers Plus</td><td>Dec 2006 - Aug 2012</td></tr><tr><td style="font-weight: bold;">Sales Associate</td><td>Seven-Eleven Food Stores</td><td>Aug 2003 - Nov 2006</td></tr></tbody></table>
+            </div>
+            <br>
+            <div style="display:flex;align-items:center;height:30px;background-color:#DBDBDB;">
+                <h3><span>E</span>DUCATION</h3>
+            </div>
+            <hr>
+            <div id="educationHistory">
+                <p style="font-weight:bold">Red River College Polytech, Winnipeg, MB (2019-2021)</p>
+                <p>College Certification in Software Development, Java Programming, SQL Programming</p>
+                <p style="font-weight:bold">University of Winnipeg, Winnipeg, MB (2001-2006)</p>
+                <p>Bachelor of Arts in Theatre, Production, Operations and Management</p>
+            </div>
+            <br>
+            <div style="display:flex;align-items:center;height:30px;background-color:#DBDBDB;">
+                <h3><span>V</span>OLUNTEER <span>W</span>ORK</h3>
+            </div>
+            <hr>
+            <div id="volunteerHistory">
+                <h2><span>S</span>T. <span>J</span>OHN'S <span>P</span>RESBYTERIAN <span>C</span>HURCH, <span>W</span>INNIPEG</h2>
+                <ul>
+                    <li> <b>Set up rooms</b> for coffee parties, cleaned up dishes afterwards</li>
+                    <li> <b>Helped make</b> pies for fundraising bake sales</li>
+                </ul>
+            </div>
+            <div style="display:flex;align-items:center;height:30px;background-color:#DBDBDB;">
+                <h3><span>O</span>THER <span>C</span>ERTIFICATIONS</h3>
+            </div>
+            <hr>
+            <div id="otherQualifications">
+                <p style="font-weight:bold">Oracle Certified Associate (Java Programming)</p>
+                <p style="font-weight:bold">Class 5 Driver's License</p>
+            </div>
+        </div>
+
+        <div style="background-color: white; height: 100px; display: flex; align-content: center;">
+            <div style="justify-content: center; width: 60%; align-items:center;display:flex;">
+                <div style="display: inline-flex; width: 90%">
+                    <div style="width:30px; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 20px; height: 20px; background-color: blue;"></div>
+                    </div>
+                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 30px">Ian McInnes</h1>
+                    <p style="margin-left: 20px; align-content: center; margin-top: 8px; font-size: 18px;"> / SOFTWARE DEVELOPER</p>
+                </div>
+            </div>
+            <div style="width: 40%;display:flex;">
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                    <img src="email.png" height="32px" width="32px"/>
+                    <a href="mailto:imcinnes31@gmail.com">imcinnes31@gmail.com</a>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                    <img src="phone.png" height="32px" width="32px"/>
+                    <a href="tel:+2042931517">(204) 293-1517</a>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                    <img src="github.png" height="32px" width="32px"/>
+                    <a href="https://github.com/imcinnes31">github.com/imcinnes31</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
