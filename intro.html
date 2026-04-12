@@ -5,6 +5,7 @@
             Ian's Portfolio Page
         </title>
         <style>
+
             body {
                 margin: 0px;
             }
@@ -74,6 +75,65 @@
                 padding-top: 20px;
                 padding-bottom: 20px;
                 width: 80%;
+            }
+
+            #pageHeader {height: 175px; }
+            #nameHeaderContainer {width: 70%}
+            #headerSquareContainer {width: 30px}
+            #headerSquare {width: 20px; height: 20px}
+            #nameHeader {justify-content: center; padding-top: 20px; padding-bottom: 20px}
+            #nameHeader h1 {font-size: 60px}
+            #nameHeader p {font-size: 40px}
+            #linkDiv {width: 30%;}
+
+            #pageFooter {height: 100px;}
+            #footerName {display: flex}
+            #footerContact {width: 40%}
+            #footerContact div img {width: 32px; height: 32px}
+
+            #introContainer {width: 75%;}
+            #profilecontainer {width: 50%; border-radius: 20px 0 0 20px;}
+            #nameContainer h1 {font-size: 30px}
+            #nameContainer div {width: 100%}
+            #nameContainer p {font-size: 18px}
+            #pitchContainer {width: 50%}
+            #greetingsContainer {height: 20%}
+            #greetingsContainer h1 {font-size: 96px}
+            #introButtons {height: 10%}
+            #introButtons a button {height: 30px; font-size: 14px; border-radius: 20px}
+            #elevatorPitches p {font-size: 20px; width: 90%}
+
+            @media only screen and (max-width: 1000px) {
+                #pageHeader {flex-direction: column; height: 175px; }
+                #nameHeaderContainer {width: 100%}
+                #headerSquareContainer {width: 50px}
+                #headerSquare {width: 40px; height: 40px}
+                #nameHeader {justify-content: center; padding-top: 20px; padding-bottom: 20px}
+                #nameHeader h1 {font-size: 48px}
+                #nameHeader p {font-size: 36px; margin-top: 8px}
+                #linkDiv {width: 100%; padding-top: 20px; border-top: 2px solid black;}
+                #linkDiv div a p {font-size: 36px}
+
+                #pageFooter {flex-direction: column; height: auto; padding-top: 20px; padding-bottom: 20px}
+                #footerName {display: none}
+                #footerContact {width: 100%}
+                #footerContact div img {width: 60px; height: 60px}
+                #footerContact div a {font-size: 28px}
+
+                #introContainer {flex-direction: column; width: 85%; margin-top: 30px}
+                #profilecontainer {width: 100%; border-radius: 40px 40px 0 0; padding-bottom: 10px}
+                #nameContainer {text-align: center; display: flex; flex-direction: column; align-items: center}
+                #nameContainer h1 {font-size: 72px}
+                #nameContainer div {width: 75%}
+                #nameContainer p {font-size: 48px}
+                table {width: 100%}
+                td {font-size: 24px}
+                #pitchContainer {width: 100%}
+                #greetingsContainer {text-align: center; height: 125px}
+                #greetingsContainer h1 {font-size: 64px}
+                #introButtons {height: 100px}
+                #introButtons a button {height: 60px; font-size: 28px; border-radius: 40px}
+                #elevatorPitches p {font-size: 36px; width: 100%}
             }
 
         </style>
@@ -147,17 +207,17 @@
         </script>
     </head>
     <body>
-        <div style="background-color: white; height: 75px; display: flex; align-content: center;">
-            <div style="justify-content: center; width: 70%; align-items:center;display:flex;">
-                <div style="display: inline-flex; width: 90%">
-                    <div style="width:30px; display: flex; align-items: center; justify-content: center;">
-                        <div style="width: 20px; height: 20px; background-color: blue;"></div>
+        <div id="pageHeader" style="background-color: white; display: flex; align-content: center;">
+            <div id="nameHeaderContainer" style="justify-content: center; align-items:center;display:flex;">
+                <div id="nameHeader" style="display: inline-flex; width: 90%">
+                    <div id="headerSquareContainer" style="display: flex; align-items: center; justify-content: center;">
+                        <div id="headerSquare" style="background-color: blue;"></div>
                     </div>
-                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 30px">Ian McInnes</h1>
-                    <p style="margin-left: 20px; align-content: center; margin-top: 8px; font-size: 18px;"> / SOFTWARE DEVELOPER</p>
+                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px;">Ian McInnes</h1>
+                    <p style="margin-top: 2px; margin-bottom: 2px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-left: 20px; align-content: center; margin-top: 8px; white-space: pre-wrap;"> / SOFTWARE DEVELOPER</p>
                 </div>
             </div>
-            <div id="linkDiv" style="display: flex; width: 30%; align-items:center; justify-content:center;">
+            <div id="linkDiv" style="display: flex; align-items:center; justify-content:center;">
                 <div>
                     <a href="javascript:void(0)"><p style="color:blue;">ABOUT ME</p></a>
                 </div>
@@ -172,47 +232,49 @@
 
         <div id="myIntro" style="display:flex; flex-direction: column; align-items:center; background-color: darkred; padding: 20px;">
             <div id="introContainer" style="display:flex;width:75%;">
-                <div id="profileContainer" style="width: 50%; border-radius: 20px 0 0 20px; display:flex; flex-direction: column; align-items: center; background-color: pink;">
+                <div id="profileContainer" style="border-radius: 20px 0 0 20px; display:flex; flex-direction: column; align-items: center; background-color: pink;">
                     <div id="picContainer" style="width:50%;border-radius: 50%;overflow:hidden;margin-top:40px;margin-bottom:40px;">
                         <img src="ian.png" width="100%" height="100%"/>
                     </div>
-                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 30px">Ian McInnes</h1>
-                    <div style="width:25%;border-bottom:2px solid blue;margin-top:20px;margin-bottom:20px;">
+                    <div id="nameContainer">
+                        <h1 style="text-align: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px;">Ian McInnes</h1>
+                        <div style="border-bottom:2px solid blue;margin-top:20px;margin-bottom:20px;">
 
+                        </div>
+                        <p style="align-content: center; margin-top: 8px;"> SOFTWARE DEVELOPER</p>
                     </div>
-                    <p style="align-content: center; margin-top: 8px; font-size: 18px;"> SOFTWARE DEVELOPER</p>
                     <table id="iconTable">
 
                     </table>
                 </div>
-                <div id="pitchContainer" style="width: 50%; border-radius: 20px; display:flex; flex-direction: column; justify-content: center; background-color: darkred;">
-                    <div style="height: 20%;">
-                        <h1 style="margin-left: 30px; font-family:Arial, Helvetica, sans-serif; font-size:96px;">Greetings!</h1>
+                <div id="pitchContainer" style="border-radius: 20px; display:flex; flex-direction: column; justify-content: center; background-color: darkred;">
+                    <div id="greetingsContainer">
+                        <h1 style="margin-left: 30px; font-family:Arial, Helvetica, sans-serif;">Greetings!</h1>
                     </div>
-                    <div style="display:flex; justify-content: center; height: 10%;">
+                    <div id="introButtons" style="display:flex; justify-content: center;">
                         <a href="resume.html" style="width: 40%">
-                            <button style="background-color:blue; color: white; font-weight: bold; font-size: 14px; height: 30px; padding-left: 20px; padding-right: 20px; border: none; border-radius: 20px;">RESUME</button>
+                            <button style="background-color:blue; color: white; font-weight: bold; padding-left: 20px; padding-right: 20px; border: none;">RESUME</button>
                         </a>
                         <a href="projects.html" style="width: 40%">
-                            <button style="background-color:pink; color: black; font-weight: bold; font-size: 14px; height: 30px; padding-left: 20px; padding-right: 20px; border: none; border-radius: 20px;">PROJECTS</button>
+                            <button style="background-color:pink; color: black; font-weight: bold; padding-left: 20px; padding-right: 20px; border: none;">PROJECTS</button>
                         </a>
                     </div>
-                    <div style="height: 70%;display:flex;flex-direction:column;align-items:center;">
-                        <p style="width:90%;color:white;margin-left:10px;margin-right:10px;font-size:20px;">I am a certified associate Java Programmer with a software development certification from Red River Community College.
+                    <div id="elevatorPitches" style="height: 70%;display:flex;flex-direction:column;align-items:center;">
+                        <p style="color:white;margin-left:10px;margin-right:10px;">I am a certified associate Java Programmer with a software development certification from Red River Community College.
                         </p>
-                        <p style="width:90%;color:white;margin-left:10px;margin-right:10px;font-size:20px;">I very much look forward to working in the field of Software Development where I can use my skills in coding and interface design to make tedious tasks or complex searches easier for everyone.
+                        <p style="color:white;margin-left:10px;margin-right:10px;">I very much look forward to working in the field of Software Development where I can use my skills in coding and interface design to make tedious tasks or complex searches easier for everyone.
                         </p>
-                        <p style="width:90%;color:white;margin-left:10px;margin-right:10px;font-size:20px;">I have the skills to take a problem and turn it into an elaborate software solution, by means of being attentive to detail in my codes and layouts, and being able to learn new programming languages and frameworks. I can recognize patterns in code and develop it to create thorough and, more importantly, user-friendly apps.
+                        <p style="color:white;margin-left:10px;margin-right:10px;">I have the skills to take a problem and turn it into an elaborate software solution, by means of being attentive to detail in my codes and layouts, and being able to learn new programming languages and frameworks. I can recognize patterns in code and develop it to create thorough and, more importantly, user-friendly apps.
                         </p>
-                        <p style="width:90%;color:white;margin-left:10px;margin-right:10px;font-size:20px;">Recently, I was able to help out mental health patients by building a web application that helps them find a counselor tailored to their specific needs, their affordability, and their location. Even more recently, I have used my own applications to help my current workplace keep track of their perishable product, display their outdoor advertising, and give customers peace of mind on the products they buy.
+                        <p style="color:white;margin-left:10px;margin-right:10px;">Recently, I was able to help out mental health patients by building a web application that helps them find a counselor tailored to their specific needs, their affordability, and their location. Even more recently, I have used my own applications to help my current workplace keep track of their perishable product, display their outdoor advertising, and give customers peace of mind on the products they buy.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div style="background-color: white; height: 100px; display: flex; align-content: center;">
-            <div style="justify-content: center; width: 60%; align-items:center;display:flex;">
+        <div id="pageFooter" style="background-color: white; display: flex; align-content: center;">
+            <div id="footerName" style="justify-content: center; width: 60%; align-items:center;">
                 <div style="display: inline-flex; width: 90%">
                     <div style="width:30px; display: flex; align-items: center; justify-content: center;">
                         <div style="width: 20px; height: 20px; background-color: blue;"></div>
@@ -221,17 +283,17 @@
                     <p style="margin-left: 20px; align-content: center; margin-top: 8px; font-size: 18px;"> / SOFTWARE DEVELOPER</p>
                 </div>
             </div>
-            <div style="width: 40%;display:flex;">
+            <div id="footerContact" style="display:flex;">
                 <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
-                    <img src="email.png" height="32px" width="32px"/>
+                    <img src="email.png"/>
                     <a href="mailto:imcinnes31@gmail.com">imcinnes31@gmail.com</a>
                 </div>
                 <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
-                    <img src="phone.png" height="32px" width="32px"/>
+                    <img src="phone.png"/>
                     <a href="tel:+2042931517">(204) 293-1517</a>
                 </div>
                 <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
-                    <img src="github.png" height="32px" width="32px"/>
+                    <img src="github.png"/>
                     <a href="https://github.com/imcinnes31">github.com/imcinnes31</a>
                 </div>
             </div>

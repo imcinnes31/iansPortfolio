@@ -8,7 +8,7 @@ const codeSamples =
         "YouTube": "https://youtu.be/Vk0aNjiRCEY",
         "Link": "https://neon-trifle-eb5b1c.netlify.app/",
         "Description" : "I created this for the CANEX store I work at just outside the 17 Wing Air Force Base. We sell a lot of perishable food items, and this keeps track of the expiry dates on the products. It works by having you frequently check store sections for products that expire before a certain date, and when that date actually arrives, the app alerts you that it needs to be pulled.",
-        "Instructions" : "When a section in the store is due to be checked, its button will flash red. Click on it, and scan barcodes to enter in their expiry dates. You will know when products are due to be pulled when the \"Products to Pull\" button flashes. <a href=\"https://youtu.be/qjeWgjW_DsY\">Full instructions in the YouTube tutorial here.</a>",
+        "Instructions" : "When a section in the store is due to be checked, its button will flash red. Click on it, and scan barcodes to enter in their expiry dates. You will know when products are due to be pulled when the \"Products to Pull\" button flashes. <a style=\"display:inline;\" href=\"https://youtu.be/qjeWgjW_DsY\">Full instructions in the YouTube tutorial here.</a>",
     	"Picture": "expiryDateTracker.jpg",
         "CodeHeader" : "Expiry Date Tracker\r\nThis is the \"Pull Alert List\" that shows products that need to be pulled from the shelves because they are expiring today, or from all later days when the store is not open.",
         "CodeBody" : 

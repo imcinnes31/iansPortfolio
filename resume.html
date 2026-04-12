@@ -25,6 +25,10 @@
             ul {
                 padding-left: 15px;
             }
+            p {
+                margin-top: 2px;
+                margin-bottom: 2px;
+            }
             #jobExperienceSection p, #educationSection p {
                 margin: 2px;
             }
@@ -68,6 +72,9 @@
                 justify-content: center;
                 align-items: center;
                 text-decoration: none;
+                font-size: 18px;
+                white-space: pre-wrap;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             }
             #linkDiv div a {
                 color: black;
@@ -75,7 +82,58 @@
             a p {
                 font-size: 18px;
             }
+            #otherQualifications p, #educationHistory p {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
 
+            #pageHeader {height: 175px; }
+            #nameHeaderContainer {width: 70%}
+            #headerSquareContainer {width: 30px}
+            #headerSquare {width: 20px; height: 20px}
+            #nameHeader {justify-content: center; padding-top: 20px; padding-bottom: 20px}
+            #nameHeader h1 {font-size: 60px}
+            #nameHeader p {font-size: 40px; margin-top: 2px;}
+            #linkDiv {width: 30%;}
+
+            #pageFooter {height: 100px;}
+            #footerName {display: flex}
+            #footerContact {width: 40%}
+            #footerContact div img {width: 32px; height: 32px}
+
+            #resumePageHeader h1 {font-size: 36px}
+            #blueSquare {width: 20px; height: 20px}
+            #resumeDownload {padding-left: 20px; padding-right: 20px; font-size: 14px; height: 30px; border-radius: 20px;}
+
+            @media only screen and (max-width: 1000px) {
+                #pageHeader {flex-direction: column; height: 175px; }
+                #nameHeaderContainer {width: 100%}
+                #headerSquareContainer {width: 50px}
+                #headerSquare {width: 40px; height: 40px}
+                #nameHeader {justify-content: center; padding-top: 20px; padding-bottom: 20px}
+                #nameHeader h1 {font-size: 48px}
+                #nameHeader p {font-size: 36px; margin-top: 8px}
+                #linkDiv {width: 100%; padding-top: 20px; border-top: 2px solid black;}
+                #linkDiv div a p {font-size: 36px}
+
+                #pageFooter {flex-direction: column; height: auto; padding-top: 20px; padding-bottom: 20px}
+                #footerName {display: none}
+                #footerContact {width: 100%}
+                #footerContact div img {width: 60px; height: 60px}
+                #footerContact div a {font-size: 28px}
+
+                #resumePageHeader h1 {font-size: 60px}
+                #blueSquare {width: 25px; height: 25px}
+                #resumeDownload {padding-left: 30px; padding-right: 30px; font-size: 36px; height: 60px; border-radius: 40px;}
+
+                .jobSkillsList {font-size: 20px}
+                td {font-size: 20px}
+                #educationHistory p {font-size: 20px}
+                h3 {font-size: 24px}
+                h3 span {font-size: 28px}
+                h2 {font-size: 18px}
+                h2 span {font-size: 22px}
+            }
 
         </style>
         <script src="codeSamples.js"></script>
@@ -85,17 +143,17 @@
         </script>
     </head>
     <body style="font-family: Arial, Helvetica, sans-serif;margin:0px;">
-        <div style="background-color: white; height: 75px; display: flex; align-content: center;">
-            <div style="justify-content: center; width: 70%; align-items:center;display:flex;">
-                <div style="display: inline-flex; width: 90%">
-                    <div style="width:30px; display: flex; align-items: center; justify-content: center;">
-                        <div style="width: 20px; height: 20px; background-color: blue;"></div>
+        <div id="pageHeader" style="background-color: white; display: flex; align-content: center;">
+            <div id="nameHeaderContainer" style="justify-content: center; align-items:center;display:flex;">
+                <div id="nameHeader" style="display: inline-flex; width: 90%">
+                    <div id="headerSquareContainer" style="display: flex; align-items: center; justify-content: center;">
+                        <div id="headerSquare" style="background-color: blue;"></div>
                     </div>
-                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 30px">Ian McInnes</h1>
-                    <p style="margin-top: 2px; margin-bottom: 2px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-left: 20px; align-content: center; margin-top: 8px; font-size: 18px; white-space: pre-wrap;"> / SOFTWARE DEVELOPER</p>
+                    <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px;">Ian McInnes</h1>
+                    <p style="margin-bottom: 2px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-left: 20px; align-content: center; white-space: pre-wrap;"> / SOFTWARE DEVELOPER</p>
                 </div>
             </div>
-            <div id="linkDiv" style="display: flex; width: 30%; align-items:center; justify-content:center;">
+            <div id="linkDiv" style="display: flex; align-items:center; justify-content:center;">
                 <div>
                     <a href="intro.html"><p>ABOUT ME</p></a>
                 </div>
@@ -107,16 +165,17 @@
                 </div>
             </div>
         </div>
+
         <div style="display: flex; flex-direction: column; align-items: center; background-color: pink;">
-            <div style="display: inline-flex; margin-bottom: 5px; margin-top: 10px;">
+            <div id="resumePageHeader" style="display: inline-flex; margin-bottom: 5px; margin-top: 10px;">
                 <div style="width:30px; display: flex; align-items: center; justify-content: center;">
-                    <div style="width: 20px; height: 20px; background-color: blue;"></div>
+                    <div id="blueSquare" style="background-color: blue;"></div>
                 </div>
-                <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px; font-size: 36px">Resume</h1>
+                <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px;">Resume</h1>
             </div>
             <div style="display:flex;margin-top: 10px;margin-bottom:20px;">
                 <a href="Ian McInnes - Software Developer Resume.pdf">
-                    <button style="background-color:blue; color: white; font-weight: bold; font-size: 14px; height: 30px; padding-left: 20px; padding-right: 20px; border: none; border-radius: 20px;">Download My Resume</button>
+                    <button id="resumeDownload" style="background-color:blue; color: white; font-weight: bold; border: none;">Download My Resume</button>
                 </a>
             </div>
         </div>
@@ -195,8 +254,8 @@
             </div>
         </div>
 
-        <div style="background-color: white; height: 100px; display: flex; align-content: center;">
-            <div style="justify-content: center; width: 60%; align-items:center;display:flex;">
+        <div id="pageFooter" style="background-color: white; display: flex; align-content: center;">
+            <div id="footerName" style="justify-content: center; width: 60%; align-items:center;">
                 <div style="display: inline-flex; width: 90%">
                     <div style="width:30px; display: flex; align-items: center; justify-content: center;">
                         <div style="width: 20px; height: 20px; background-color: blue;"></div>
@@ -205,17 +264,17 @@
                     <p style="margin-left: 20px; align-content: center; margin-top: 8px; font-size: 18px;"> / SOFTWARE DEVELOPER</p>
                 </div>
             </div>
-            <div style="width: 40%;display:flex;">
+            <div id="footerContact" style="display:flex;">
                 <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
-                    <img src="email.png" height="32px" width="32px"/>
+                    <img src="email.png"/>
                     <a href="mailto:imcinnes31@gmail.com">imcinnes31@gmail.com</a>
                 </div>
                 <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
-                    <img src="phone.png" height="32px" width="32px"/>
+                    <img src="phone.png"/>
                     <a href="tel:+2042931517">(204) 293-1517</a>
                 </div>
                 <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
-                    <img src="github.png" height="32px" width="32px"/>
+                    <img src="github.png"/>
                     <a href="https://github.com/imcinnes31">github.com/imcinnes31</a>
                 </div>
             </div>
