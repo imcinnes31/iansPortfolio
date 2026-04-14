@@ -112,7 +112,7 @@
                 #projectPageHeader h1 {font-size: 60px}
                 #blueSquare {width: 25px; height: 25px}
                 #descContainer {width: 90%}
-                #pageDesc {font-size: 36px}
+                #pageDesc {font-size: 48px}
                 .projectSection h2 {font-size: 60px}
                 .whiteContainer {width: 95%}
                 .projectContainer {flex-direction: column; align-items: center}
@@ -120,12 +120,12 @@
                 .projectButtons a {width: 50%}
                 .projectButtons a button {height: 75px; border-radius: 40px; font-size: 42px}
                 .descPane {width: 90%; padding-top: 20px}
-                .descPane p {font-size: 28px}
-                .descPane p a {font-size: 28px}
-                .videoDesc a {font-size: 28px}
-                .videoLink {font-size: 28px}
+                .descPane p {font-size: 48px}
+                .descPane p a {font-size: 48px}
+                .videoDesc a {font-size: 48px}
+                .videoLink {font-size: 48px}
                 .picturePane {width: 85%}
-                h4 {font-size: 28px}
+                h4 {font-size: 48px}
             }
 
         </style>
@@ -204,12 +204,12 @@
                         const youTubeHeader = document.createElement("h4");
                         youTubeHeader.className = "videoLink";
                         youTubeHeader.style.margin = "0px";
-                        youTubeHeader.innerHTML = "YouTube Demo: ";
+                        youTubeHeader.innerHTML = "Demo Video: ";
                         youTubeDiv.appendChild(youTubeHeader);
                         const youTubeLink = document.createElement("a");
-                        youTubeLink.style.marginLeft = "5px";
+                        youTubeLink.style.marginLeft = "20px";
                         youTubeLink.href = codeSamples[project]["YouTube"];
-                        youTubeLink.innerHTML = codeSamples[project]["YouTube"];
+                        youTubeLink.innerHTML = codeSamples[project]["YouTube"].replace("https://","");
                         youTubeDiv.appendChild(youTubeLink);
                         leftPane.appendChild(youTubeDiv);
                     }
