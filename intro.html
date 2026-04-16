@@ -67,6 +67,7 @@
                 text-align: center;
                 font-size: 10px;
                 font-family:Arial, Helvetica, sans-serif;
+                width: 20%;
             }
             td img {
                 padding-top: 10px;
@@ -89,6 +90,7 @@
             #pageFooter {height: 100px;}
             #footerName {display: flex}
             #footerContact {width: 40%}
+            #footerContact div {width: 33.3%}
             #footerContact div img {width: 32px; height: 32px}
 
             #introContainer {width: 75%;}
@@ -99,7 +101,7 @@
             #nameContainer p {font-size: 18px}
             #pitchContainer {width: 50%}
             #greetingsContainer {height: 20%}
-            #greetingsContainer h1 {font-size: 96px}
+            #greetingsContainer h1 {font-size: 96px; margin-left: 30px;}
             #introButtons {height: 10%}
             #introButtons a {width: 40%}
             #introButtons a button {height: 30px; font-size: 14px; border-radius: 20px}
@@ -110,39 +112,43 @@
                     -webkit-text-size-adjust: 100%;
                     text-size-adjust: 100%;
                 }
-                #pageHeader {flex-direction: column; height: 200px; }
+                #pageHeader {flex-direction: column; height: 250px; }
                 #nameHeaderContainer {width: 100%}
-                #headerSquareContainer {width: 50px}
-                #headerSquare {width: 40px; height: 40px}
+                #headerSquareContainer {width: 60px}
+                #headerSquare {width: 50px; height: 50px}
                 #nameHeader {justify-content: center; padding-top: 20px; padding-bottom: 20px}
-                #nameHeader h1 {font-size: 48px; }
-                #nameHeader p {font-size: 36px; margin-top: 8px; }
+                #nameHeader h1 {font-size: 96px;}
+                #nameHeader p {display: none}
                 #linkDiv {width: 100%; padding-top: 20px; border-top: 2px solid black;}
                 #linkDiv div {width: 33%}
-                #linkDiv div a p {font-size: 48px; }
+                #linkDiv div:not(:first-of-type) {border-left: 1px solid black}
+                #linkDiv div a p {font-size: 56px; }
 
                 #pageFooter {flex-direction: column; height: auto; padding-top: 20px; padding-bottom: 20px}
                 #footerName {display: none}
-                #footerContact {width: 100%}
-                #footerContact div img {width: 60px; height: 60px}
-                #footerContact div a {font-size: 28px; }
+                #footerContact {width: 100%; flex-direction: column;align-items:center}
+                #footerContact div {height: 250px;width:90%;}
+                #footerContact div:not(:first-of-type) {border-top: 1px solid black}
+                #footerContact div img {width: 125px; height: 125px}
+                #footerContact div a {font-size: 60px; font-weight: bold;}
 
-                #introContainer {flex-direction: column; width: 85%; margin-top: 30px}
+                #introContainer {flex-direction: column; width: 90%; margin-top: 30px}
                 #profilecontainer {width: 100%; border-radius: 40px 40px 0 0; padding-bottom: 10px}
                 #picContainer {width:75%;border-radius: 50%;}
                 #nameContainer {text-align: center; display: flex; flex-direction: column; align-items: center}
-                #nameContainer h1 {font-size: 96px}
+                #nameContainer h1 {font-size: 128px}
                 #nameContainer div {width: 75%}
-                #nameContainer p {font-size: 60px}
+                #nameContainer p {font-size: 72px; padding-bottom:20px}
                 table {width: 100%}
-                td {font-size: 28px}
+                td {font-size: 36px; font-weight: bold; width: 25%; height: 80px;}
                 #pitchContainer {width: 100%}
-                #greetingsContainer {text-align: center; height: 150px}
-                #greetingsContainer h1 {font-size: 72px}
+                #greetingsContainer {text-align: center; height: 200px}
+                #greetingsContainer h1 {font-size: 96px}
                 #introButtons {height: 100px}
                 #introButtons a {width: 50%}
                 #introButtons a button {height: 80px; font-size: 48px; border-radius: 40px}
-                #elevatorPitches p {font-size: 48px; width: 100%}
+                #elevatorPitches {padding-top: 30px}
+                #elevatorPitches p {font-size: 60px; width: 100%}
             }
 
         </style>
@@ -193,19 +199,24 @@
                 "GitHub",
             ];
             document.addEventListener('DOMContentLoaded', () => {
+                const screenWidth = window.screen.availWidth - (window.outerWidth - window.innerWidth);
+                const maxWidth = 1000;
+                const maxI = screenWidth < maxWidth ? 5 : 4;
+                const maxJ = screenWidth < maxWidth ? 4 : 5;
+
                 const iconTable = document.getElementById("iconTable");
 
-                for (let i = 0; i < 4; i++) {
+                for (let i = 0; i < maxI; i++) {
                     const iconRow = document.createElement("tr");
                     const nameRow = document.createElement("tr");
-                    for (let j = 0; j < 5; j++) {
+                    for (let j = 0; j < maxJ; j++) {
                         const newIcon = document.createElement("td");
                         const iconPic = document.createElement("img");
                         iconPic.style.width = "60%";
-                        iconPic.src = iconNames[i * 5 + j];
+                        iconPic.src = iconNames[i * maxJ + j];
                         newIcon.appendChild(iconPic);
                         const newName = document.createElement("td");
-                        newName.innerHTML = codeNames[i * 5 + j];
+                        newName.innerHTML = codeNames[i * maxJ + j];
                         iconRow.appendChild(newIcon);
                         nameRow.appendChild(newName);
                     }
@@ -240,7 +251,7 @@
         </div>
 
         <div id="myIntro" style="display:flex; flex-direction: column; align-items:center; background-color: darkred; padding: 20px;">
-            <div id="introContainer" style="display:flex;width:75%;">
+            <div id="introContainer" style="display:flex;">
                 <div id="profileContainer" style="border-radius: 20px 0 0 20px; display:flex; flex-direction: column; align-items: center; background-color: pink;">
                     <div id="picContainer" style="overflow:hidden;margin-top:40px;margin-bottom:40px;">
                         <img src="ian.png" width="100%" height="100%"/>
@@ -258,7 +269,7 @@
                 </div>
                 <div id="pitchContainer" style="border-radius: 20px; display:flex; flex-direction: column; justify-content: center; background-color: darkred;">
                     <div id="greetingsContainer">
-                        <h1 style="margin-left: 30px; font-family:Arial, Helvetica, sans-serif;">Greetings!</h1>
+                        <h1 style="font-family:Arial, Helvetica, sans-serif;">Greetings!</h1>
                     </div>
                     <div id="introButtons" style="display:flex; justify-content: center;">
                         <a href="resume.html">
@@ -293,15 +304,15 @@
                 </div>
             </div>
             <div id="footerContact" style="display:flex;">
-                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center;">
                     <img src="email.png"/>
                     <a href="mailto:imcinnes31@gmail.com">imcinnes31@gmail.com</a>
                 </div>
-                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center;">
                     <img src="phone.png"/>
                     <a href="tel:+2042931517">(204) 293-1517</a>
                 </div>
-                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center;">
                     <img src="github.png"/>
                     <a href="https://github.com/imcinnes31">github.com/imcinnes31</a>
                 </div>

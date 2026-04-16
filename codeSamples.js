@@ -48,7 +48,7 @@ const codeSamples =
     },
     "nutritionCounter":
     {
-        "Title" : "Nutrition Counter ***Work In Progress***",
+        "Title" : "Nutrition Counter (Work In Progress)",
         "Type" : "Android Mobile",
         "Technologies": ["Java", "Retrofit", "SQLite"],
         "YouTube": null,

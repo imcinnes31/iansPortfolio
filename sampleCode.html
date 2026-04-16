@@ -41,6 +41,7 @@
             }
 
             #codePageHeader h1 {font-size: 36px}
+            #blueSquareContainer {width: 30px;}
             #blueSquare {width: 20px; height: 20px}
             #codeDescription {font-size: 18px;}
             .codeArea {height: 250px}
@@ -51,11 +52,14 @@
                     text-size-adjust: 100%;
                 }
 
-                #codePageHeader h1 {font-size: 60px}
-                #blueSquare {width: 25px; height: 25px}
-                #codeDescription {font-size: 28px; padding-left: 30px; padding-right: 30px}
-                .codeFileHeader {font-size: 28px}
+                #codePageHeader h1 {font-size: 84px}
+                #blueSquareContainer {width: 50px;}
+                #blueSquare {width: 40px; height: 40px}
+                #appTitle {font-size: 72px}
+                #codeDescription {font-size: 60px; padding-left: 30px; padding-right: 30px}
+                .codeFileHeader {font-size: 60px; margin-top: 30px; margin-bottom: 30px;}
                 .codeArea {height: 500px}
+                .codeArea p {font-size: 36px}
             }
 
         </style>
@@ -134,7 +138,7 @@
     <body style="background-color: lightgray">
         <div style="display: flex; flex-direction: column; align-items: center; background-color: lightgray;">
             <div id="codePageHeader" style="display: inline-flex; margin-bottom: 5px; margin-top: 10px;">
-                <div style="width:30px; display: flex; align-items: center; justify-content: center;">
+                <div id="blueSquareContainer" style="display: flex; align-items: center; justify-content: center;">
                     <div id="blueSquare" style="background-color: blue;"></div>
                 </div>
                 <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px;">Code Sample</h1>
@@ -144,7 +148,7 @@
             </div>
             <br>
             <div>
-                <p id="codeDescription" style="font-size: 18px;"></p>
+                <p id="codeDescription"></p>
             </div>
         </div>
         <div id="sampleSections" style="display:flex; flex-direction: column; align-items:center; background-color: lightgray"></div>

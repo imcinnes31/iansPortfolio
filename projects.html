@@ -75,13 +75,16 @@
             #pageFooter {height: 100px;}
             #footerName {display: flex}
             #footerContact {width: 40%}
+            #footerContact div {width: 33.3%}
             #footerContact div img {width: 32px; height: 32px}
 
             #projectPageHeader h1 {font-size: 36px}
+            #blueSquareContainer {width: 30px;}
             #blueSquare {width: 20px; height: 20px}
             #pageDesc {font-size: 24px}
 
             .whiteContainer {width: 75%}
+            .projectButtons {height: 75px}
             .projectButtons a {width: 30%}
             .descPane {width: 50%;}
             .picturePane {width: 50%}
@@ -92,40 +95,46 @@
                     text-size-adjust: 100%;
                 }
 
-                #pageHeader {flex-direction: column; height: 200px; }
+                #pageHeader {flex-direction: column; height: 250px; }
                 #nameHeaderContainer {width: 100%}
-                #headerSquareContainer {width: 50px}
-                #headerSquare {width: 40px; height: 40px}
+                #headerSquareContainer {width: 60px}
+                #headerSquare {width: 50px; height: 50px}
                 #nameHeader {justify-content: center; padding-top: 20px; padding-bottom: 20px}
-                #nameHeader h1 {font-size: 48px}
-                #nameHeader p {font-size: 36px; margin-top: 8px}
+                #nameHeader h1 {font-size: 96px;}
+                #nameHeader p {display: none}
                 #linkDiv {width: 100%; padding-top: 20px; border-top: 2px solid black;}
                 #linkDiv div {width: 33%}
-                #linkDiv div a p {font-size: 48px; }
+                #linkDiv div:not(:first-of-type) {border-left: 1px solid black}
+                #linkDiv div a p {font-size: 56px; }
 
                 #pageFooter {flex-direction: column; height: auto; padding-top: 20px; padding-bottom: 20px}
                 #footerName {display: none}
-                #footerContact {width: 100%}
-                #footerContact div img {width: 60px; height: 60px}
-                #footerContact div a {font-size: 28px}
+                #footerContact {width: 100%; flex-direction: column;align-items:center}
+                #footerContact div {height: 250px;width:90%;}
+                #footerContact div:not(:first-of-type) {border-top: 1px solid black}
+                #footerContact div img {width: 125px; height: 125px}
+                #footerContact div a {font-size: 60px; font-weight: bold;}
 
-                #projectPageHeader h1 {font-size: 60px}
-                #blueSquare {width: 25px; height: 25px}
+                #projectPageHeader h1 {font-size: 84px}
+                #blueSquareContainer {width: 50px;}
+                #blueSquare {width: 40px; height: 40px}
                 #descContainer {width: 90%}
-                #pageDesc {font-size: 48px}
-                .projectSection h2 {font-size: 60px}
+                #pageDesc {font-size: 60px}
+                .projectSection {align-items: center;}
+                .projectSection h2 {font-size: 72px; width: 95%;}
                 .whiteContainer {width: 95%}
                 .projectContainer {flex-direction: column; align-items: center}
-                .projectButtons {padding-top: 10px; padding-bottom: 20px}
-                .projectButtons a {width: 50%}
-                .projectButtons a button {height: 75px; border-radius: 40px; font-size: 42px}
+                .projectButtons {padding-top: 10px; padding-bottom: 20px; height: 275px; flex-direction: column;}
+                .projectButtons a {width: 100%}
+                .projectButtons a button {height: 100px; border-radius: 50px; font-size: 72px; margin: 20px}
                 .descPane {width: 90%; padding-top: 20px}
-                .descPane p {font-size: 48px}
-                .descPane p a {font-size: 48px}
-                .videoDesc a {font-size: 48px}
-                .videoLink {font-size: 48px}
+                .descPane p {font-size: 60px}
+                .descPane p a {font-size: 60px}
+                .videoDesc {flex-direction: column}
+                .videoDesc a {font-size: 60px}
+                .videoLink {font-size: 60px}
                 .picturePane {width: 85%}
-                h4 {font-size: 48px}
+                h4 {font-size: 60px}
             }
 
         </style>
@@ -166,7 +175,6 @@
 
                     const projectDivLower = document.createElement("div");
                     projectDivLower.className = "projectButtons";
-                    projectDivLower.style.height = "75px";
                     projectDivLower.style.display = "flex";
                     projectDivLower.style.justifyContent = "center";
                     const sampleLink = document.createElement("a");
@@ -195,7 +203,7 @@
                     projectDescription.innerHTML = codeSamples[project]["Description"].replaceAll(". ",".  ");
                     leftPane.appendChild(projectDescription);
                     const techDescription = document.createElement("h4");
-                    techDescription.innerHTML = "Technologies Used:  " + codeSamples[project]["Technologies"].join(", ");
+                    techDescription.innerHTML = "Technologies Used:  <span style=\"color: blue\">" + codeSamples[project]["Technologies"].join(", ") + "</span>";
                     leftPane.appendChild(techDescription);
                     if (codeSamples[project]["YouTube"] != null) {
                         const youTubeDiv = document.createElement("div");
@@ -229,6 +237,7 @@
                     const projectPic = document.createElement("img");
                     projectPic.src = codeSamples[project]["Picture"];
                     projectPic.style.width = "90%";
+                    projectPic.style.border = "2px solid black";
                     rightPane.appendChild(projectPic);
 
                     projectDivUpper.appendChild(rightPane);
@@ -269,13 +278,13 @@
 
         <div style="display: flex; flex-direction: column; align-items: center; background-color: lightblue;">
             <div id="projectPageHeader" style="display: inline-flex; margin-bottom: 5px; margin-top: 10px;">
-                <div style="width:30px; display: flex; align-items: center; justify-content: center;">
+                <div id="blueSquareContainer" style="display: flex; align-items: center; justify-content: center;">
                     <div id="blueSquare" style="background-color: blue;"></div>
                 </div>
                 <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin-top:0px; margin-bottom:0px;">Projects</h1>
             </div>
             <div id="descContainer">
-                <p id="pageDesc">This is a sample of my assignments and projects, including ones currently in progress.</p>
+                <p id="pageDesc">This is a sample of my assignments and projects, including ones that are currently in progress.</p>
             </div>
         </div>
 
@@ -294,15 +303,15 @@
                 </div>
             </div>
             <div id="footerContact" style="display:flex;">
-                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center;">
                     <img src="email.png"/>
                     <a href="mailto:imcinnes31@gmail.com">imcinnes31@gmail.com</a>
                 </div>
-                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center;">
                     <img src="phone.png"/>
                     <a href="tel:+2042931517">(204) 293-1517</a>
                 </div>
-                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center; width: 33.3%">
+                <div style="display:flex;flex-direction:column;align-items: center;justify-content:center;">
                     <img src="github.png"/>
                     <a href="https://github.com/imcinnes31">github.com/imcinnes31</a>
                 </div>
