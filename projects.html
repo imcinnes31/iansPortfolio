@@ -95,7 +95,7 @@
                     text-size-adjust: 100%;
                 }
 
-                #pageHeader {flex-direction: column; height: 250px; }
+                #pageHeader {flex-direction: column; height: 265px; }
                 #nameHeaderContainer {width: 100%}
                 #headerSquareContainer {width: 60px}
                 #headerSquare {width: 50px; height: 50px}
@@ -189,7 +189,7 @@
                     downloadLink.href = codeSamples[project]["Link"] != null ? codeSamples[project]["Link"] : "javascript:void(0)";
                     const downloadButton = document.createElement("button");
                     downloadButton.style.backgroundColor = codeSamples[project]["Link"] != null ? "darkslategray" : "lightgray";
-                    downloadButton.innerHTML = codeSamples[project]["Type"] == "Web" ? "Go To Website" : codeSamples[project]["Link"] != null ? "Download Link" : "Coming Soon";
+                    downloadButton.innerHTML = codeSamples[project]["Type"] == "Web" ? "Go To Website" : codeSamples[project]["Link"] != null ? "Download App" : "Coming Soon";
                     downloadLink.appendChild(downloadButton);
                     projectDivLower.appendChild(sampleLink);
                     projectDivLower.appendChild(downloadLink);
