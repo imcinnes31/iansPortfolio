@@ -129,7 +129,7 @@ const codeSamples =
         "Type" : "Web",
         "Technologies": ["MongoDB", "Express", "React", "Node"],
         "YouTube": null,
-        "Link": "https://phare-pricing.web.app/",
+        "Link": "https://github.com/imcinnes31/Pricing-Tool",
         "Description" : "This was the website I worked on during my internship as a Full Stack Developer and Team Leader. This site helps people to find a counselor, based on specializations, approaches, language, and price prepared to pay.",
         "Instructions" : "Click on the \"Find A Counselor\" Button, and in the next screen, use the dropdown menus to select specializations, approaches, price range, etc.",
 	    "Picture": "phareCounseling.png",
