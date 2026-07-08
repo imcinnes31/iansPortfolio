@@ -29,9 +29,9 @@ const codeSamples =
         "Type" : "Windows Desktop",
         "Technologies": ["Java", "Swing", "MySQL"],
         "YouTube": "https://youtu.be/VjbSL6QRKrY",
-        "Link": "https://www.dropbox.com/scl/fi/9p2h5z4z6ttsvqfrdfvvz/HymnSingAlongApp.zip?rlkey=ilp1skmmdogk1lka336cjhy2i&st=g56d5qk6&dl=0",
+        "Link": "https://www.dropbox.com/scl/fi/xjywivic8fuat8fckcw61/HymnSingAlongApp3.2b.zip?rlkey=9ty3lpptw52s6lz6ipwd6bzc0&st=u15pb8ko&dl=0",
         "Description" : "My church livestreams their services, and this app adds karaoke style text to the video when we sing our Hymns.",
-        "Instructions" : "Use the dropdown menu to select the hymn about to be sung and click \"Start Text\". After the title card appears, press Enter to bring up the Hymn text. When the singing starts, press Space and the text will start to fill. A PDF Read Me is included in the .zip file in the link.",
+        "Instructions" : "The app interface is in green screen so it won't show up on the livestream. Use the dropdown menu to select the hymn about to be sung and click \"Start Text\". After the title card appears, press Enter to bring up the Hymn text. When the singing starts, press Space and the text will start to fill. Press Space again to pause, or Esc to stop.",
     	"Picture": "hymnSingAlong.jpg",
         "CodeHeader" : "Hymn Sing Along\r\nThese are the individual notes that consist of sing along text that when put together, make a \"karaoke track\" for the entire Hymn.",
         "CodeBody" : 
